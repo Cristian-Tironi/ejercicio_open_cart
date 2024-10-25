@@ -1,0 +1,30 @@
+
+- En la prueba de la funcionalidad de una página web de compra, se ha implementado exitosamente la automatización End-to-End (E2E).
+
+
+- Validación de la Funcionalidad:
+La prueba funcional automatizada (E2E) ha validado de manera exitosa la eficacia del flujo de compra,
+desde la inclusión de productos en el carrito hasta la confirmación de la orden.
+
+- Eficiencia en Pruebas:
+La automatización de la prueba E2E ha demostrado ser eficiente, ya que puede repetirse con precisión y rapidez,
+lo que ahorra tiempo en comparación con las pruebas manuales.
+
+- Hallazgos:
+
+Durante la implementación de las pruebas, se encontraron desafíos en la identificación de ciertos elementos de la página web.
+Algunos elementos carecían de atributos únicos como id o classname, lo que dificultó su localización.
+Además, se observó que ciertos atributos, como id y classname, se repetían en diferentes partes de la página,
+lo que podría llevar a errores en las pruebas automatizadas.
+
+Este hallazgo subraya la importancia de seguir buenas prácticas en el desarrollo web,
+como la asignación de atributos únicos a los elementos, para facilitar la implementación de pruebas automatizadas.
+
+- Fallos que pueden interferir en la prueba:
+Durante la exploración manual de la página web se encontraron varios fallos, algunos de estos pueden interferir con el flujo de la prueba.
+Ejemplos:
+Al realizar el flujo de compra a pesar de informar que no hay stock del producto se carga y puede ser adquirido.
+Algunos productos como Apple Cinema 30" y Canon EOS 5D, tiene un defecto en el botón “Add to Cart”,
+el cual en lugar de agregar el producto al carrito, redirecciona al usuario a una página con información del producto.
+
+
