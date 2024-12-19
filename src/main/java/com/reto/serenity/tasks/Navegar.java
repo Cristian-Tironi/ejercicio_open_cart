@@ -1,4 +1,4 @@
-package co.com.sura.acelerador.tasks;
+package com.reto.serenity.tasks;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
 
 
-import static co.com.sura.acelerador.util.Constantes.OPEN_CART_ABSTRACTA_URL;
+import static com.reto.serenity.util.Constantes.OPEN_CART_ABSTRACTA_URL;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Navegar implements Task {

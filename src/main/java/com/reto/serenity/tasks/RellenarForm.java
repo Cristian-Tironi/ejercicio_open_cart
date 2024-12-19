@@ -1,8 +1,8 @@
-package co.com.sura.acelerador.tasks;
+package com.reto.serenity.tasks;
 
-import co.com.sura.acelerador.model.FormData;
-import co.com.sura.acelerador.userinterfaces.CheckoutFormUI;
-import co.com.sura.acelerador.userinterfaces.OpenCartPageUI;
+import com.reto.serenity.model.FormData;
+import com.reto.serenity.userinterfaces.CheckoutFormUI;
+import com.reto.serenity.userinterfaces.OpenCartPageUI;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -12,9 +12,10 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.sura.acelerador.userinterfaces.CheckoutFormUI.*;
+import static com.reto.serenity.userinterfaces.CheckoutFormUI.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RellenarForm implements Task {
 
@@ -51,9 +52,8 @@ public class RellenarForm implements Task {
 
                 WaitUntil.the(CheckoutFormUI.CONTINUEDETAILS,isClickable()).forNoMoreThan(20).seconds(),
                 Click.on(CheckoutFormUI.CONTINUEDETAILS),
-                WaitUntil.the(CheckoutFormUI.CONTINUEMETHOD,isClickable()).forNoMoreThan(20).seconds(),
-                Click.on(CheckoutFormUI.CONTINUEMETHOD),
-                WaitUntil.the(CheckoutFormUI.CONTINUEPAYMENT,isClickable()).forNoMoreThan(20).seconds(),
+
+                WaitUntil.the(CheckoutFormUI.CHECKTERMS,isVisible()).forNoMoreThan(20).seconds(),
                 Click.on(CheckoutFormUI.CHECKTERMS),
                 Click.on(CheckoutFormUI.CONTINUEPAYMENT)
         );

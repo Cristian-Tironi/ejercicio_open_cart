@@ -1,4 +1,4 @@
-package co.com.sura.acelerador.model;
+package com.reto.serenity.model;
 
 import lombok.Data;
 

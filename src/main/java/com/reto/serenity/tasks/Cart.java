@@ -1,6 +1,6 @@
-package co.com.sura.acelerador.tasks;
+package com.reto.serenity.tasks;
 
-import co.com.sura.acelerador.userinterfaces.OpenCartPageUI;
+import com.reto.serenity.userinterfaces.OpenCartPageUI;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;

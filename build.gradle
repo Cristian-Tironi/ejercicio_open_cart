@@ -13,7 +13,6 @@ buildscript {
 plugins {
     id 'java'
     id 'idea'
-    id 'org.sonarqube' version '4.0.0.2929'
     id 'io.freefair.lombok' version '6.5.1'
     id 'net.gradleutil.gradle-conf' version '1.1.15'
     id 'net.serenity-bdd.serenity-gradle-plugin' version '4.0.46'
@@ -25,10 +24,8 @@ repositories {
     mavenCentral()
 }
 
-group "co.com.sura.acelerador"
+group "com.reto.serenity"
 version '1.0.0'
-setSourceCompatibility JavaVersion.VERSION_17
-setTargetCompatibility JavaVersion.VERSION_17
 
 wrapper {
     gradleVersion '8.2.1'
@@ -46,11 +43,9 @@ ext {
     logbackVersion = '1.4.14'
     jacksonAnnotations = '2.15.2'
     lombokVersion = '1.18.24'
-    javaFakerVersion = '1.0.2'
     seleniumDevToolsVersion = '4.12.1'
     serenityEnsureVersion = '3.9.7'
     serenityRestVersion = '4.0.14'
-    restAssuredVersion = '5.3.0'
 }
 
 dependencies {
@@ -61,13 +56,9 @@ dependencies {
             "net.serenity-bdd:serenity-screenplay-rest:${serenityRestVersion}",
             "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-ensure:${serenityEnsureVersion}",
-            "io.rest-assured:rest-assured:${restAssuredVersion}",
+            "ch.qos.logback:logback-classic:${logbackVersion}",
 
             "org.projectlombok:lombok:${lombokVersion}",
-            "ch.qos.logback:logback-classic:${logbackVersion}",
-            "com.fasterxml.jackson.core:jackson-annotations:${jacksonAnnotations}",
-            "org.assertj:assertj-core:${assertJVersion}",
-            "com.github.javafaker:javafaker:${javaFakerVersion}",
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
             "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
 
@@ -85,34 +76,4 @@ dependencies {
     testCompileOnly 'junit:junit:4.13.1'
 }
 
-test {
-
-    String tiporegresion = System.properties['Tiporegresion']
-    println "Tipo de regresion recibido por parametro: " + tiporegresion
-    systemProperty "Tiporegresion", tiporegresion
-
-    switch (tiporegresion) {
-        case "@SISTEMA":
-            useJUnit()
-            include('**/InicioSesionRunner.class*')
-            maxParallelForks = 1
-            break
-        case "@BACKEND":
-            useJUnit()
-            include('**/CrearCuentaRunner.class*')
-            maxParallelForks = 1
-            break
-    }
-    testLogging {
-        exceptionFormat = 'full'
-    }
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-gradle.startParameter.continueOnFailure = true
-
-test.finalizedBy(aggregate)
 

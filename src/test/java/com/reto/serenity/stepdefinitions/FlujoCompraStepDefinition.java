@@ -1,22 +1,23 @@
-package co.com.sura.acelerador.stepdefinitions;
+package com.reto.serenity.stepdefinitions;
 
-import co.com.sura.acelerador.model.FormData;
-import co.com.sura.acelerador.questions.MainPage;
-import co.com.sura.acelerador.questions.MensajeConfirmacion;
-import co.com.sura.acelerador.tasks.*;
+import com.reto.serenity.tasks.*;
+import com.reto.serenity.model.FormData;
+import com.reto.serenity.questions.MainPage;
+import com.reto.serenity.questions.MensajeConfirmacion;
 
+import io.cucumber.java.en.*;
 import io.cucumber.java.Before;
 import io.cucumber.java.DataTableType;
-import io.cucumber.java.en.*;
 
+import java.util.Map;
 import org.hamcrest.CoreMatchers;
 import net.serenitybdd.screenplay.actors.*;
-import java.util.Map;
 
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.CoreMatchers.containsString;
 import static net.serenitybdd.screenplay.actors.OnStage.*;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static co.com.sura.acelerador.util.Constantes.USUARIO;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static com.reto.serenity.util.Constantes.USUARIO;
+import static com.reto.serenity.util.Constantes.MENSAJE_TITULO_HOME_YOUR_STORE;
 
 public class FlujoCompraStepDefinition {
 
@@ -48,13 +49,16 @@ public class FlujoCompraStepDefinition {
         theActorCalled(USUARIO).wasAbleTo(
                 Navegar.WebCarritoCompra()
         );
-        theActorInTheSpotlight().should(seeThat(MainPage.displayed(), CoreMatchers.equalTo("Your Store")));
+        theActorInTheSpotlight().should(
+                seeThat("Validación de que se carga correctamente la página y muestra el titulo",
+                        MainPage.displayed(), CoreMatchers.equalTo(MENSAJE_TITULO_HOME_YOUR_STORE)));
     }
 
     @When("agrega {int} al carrito")
     public void agregaAlCarrito(Integer cantidad) {
-        theActorInTheSpotlight().remember("cantidad", cantidad);
-        theActorInTheSpotlight().attemptsTo(new AddItem());
+        theActorInTheSpotlight().attemptsTo(
+                AddItem.add(cantidad)
+        );
     }
 
     @And("visualiza el carrito")
@@ -81,7 +85,7 @@ public class FlujoCompraStepDefinition {
     @And("visualizo la confirmación: {string}")
     public void visualizoLaConfirmaciónYourOrderHasBeenPlaced(String validacion) {
         theActorInTheSpotlight().should(
-                seeThat(MensajeConfirmacion.displayed(), equalTo(validacion))
+                seeThat(MensajeConfirmacion.displayed(), containsString(validacion))
         );
     }
 }

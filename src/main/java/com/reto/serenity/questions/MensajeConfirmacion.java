@@ -1,6 +1,6 @@
-package co.com.sura.acelerador.questions;
+package com.reto.serenity.questions;
 
-import co.com.sura.acelerador.userinterfaces.CheckoutFormUI;
+import com.reto.serenity.userinterfaces.CheckoutFormUI;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

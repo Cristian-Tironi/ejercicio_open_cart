@@ -11,7 +11,7 @@ Este proyecto contiene una prueba funcional automatizada (E2E) para el flujo de 
 ## Requisitos
 * Java 17 installed
 * Gradle  (Suggested version 7.5.1)
-* IDE installed (Suggested IntelliJ IDEA 2022.2)
+* IDE installed (Suggested IntelliJ IDEA)
 * Google Chrome installed
 
 ## Instalación

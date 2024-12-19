@@ -1,6 +1,6 @@
-package co.com.sura.acelerador.tasks;
+package com.reto.serenity.tasks;
 
-import co.com.sura.acelerador.userinterfaces.CheckoutFormUI;
+import com.reto.serenity.userinterfaces.CheckoutFormUI;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
