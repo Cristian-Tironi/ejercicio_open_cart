@@ -10,7 +10,7 @@ Este proyecto contiene una prueba funcional automatizada (E2E) para el flujo de 
 
 ## Requisitos
 * Java 17 installed
-* Gradle  (Suggested version 7.5.1)
+* Gradle  (Suggested version 8.8.0)
 * IDE installed (Suggested IntelliJ IDEA)
 * Google Chrome installed
 
@@ -27,7 +27,7 @@ Este proyecto contiene una prueba funcional automatizada (E2E) para el flujo de 
 > Ejemplo: 
 > ```plaintext
 > Generating Serenity Reports
-> Main report: file:///C:/Users/cristian.tironi/Desktop/reto_automatizacion/template_screenplay_sura-master/target/site/serenity/index.html
+> Main report: file:///C:/Users/cristian.tironi/Desktop/reto_automatizacion/target/site/serenity/index.html
 >
 
 
