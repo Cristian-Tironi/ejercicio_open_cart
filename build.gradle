@@ -28,7 +28,7 @@ group "com.reto.serenity"
 version '1.0.0'
 
 wrapper {
-    gradleVersion '8.2.1'
+    gradleVersion '8.8.0'
     distributionType Wrapper.DistributionType.ALL
 }
 
@@ -42,7 +42,7 @@ ext {
     assertJVersion = '3.24.2'
     logbackVersion = '1.4.14'
     jacksonAnnotations = '2.15.2'
-    lombokVersion = '1.18.24'
+    lombokVersion = '1.18.36'
     seleniumDevToolsVersion = '4.12.1'
     serenityEnsureVersion = '3.9.7'
     serenityRestVersion = '4.0.14'
